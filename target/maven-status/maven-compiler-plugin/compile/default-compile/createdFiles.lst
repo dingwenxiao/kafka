@@ -1,1 +1,7 @@
-com/dingwen/kafka/custompartitioner/Test.class
+com\dingwen\kafka\custompartitioner\UserProducerThread.class
+com\dingwen\kafka\custompartitioner\KafkaUserCustomPatitioner.class
+com\dingwen\kafka\custompartitioner\IUserService.class
+com\dingwen\kafka\custompartitioner\KakfaCustomPartitionerMain.class
+com\dingwen\kafka\custompartitioner\UserServiceImpl.class
+com\dingwen\kafka\custompartitioner\UserConsumerThread.class
+com\dingwen\kafka\custompartitioner\UserProducerThread$1.class

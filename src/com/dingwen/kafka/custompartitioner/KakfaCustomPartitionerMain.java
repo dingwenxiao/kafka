@@ -4,7 +4,7 @@ public final class KakfaCustomPartitionerMain {
 
 	public static void main(String[] args) {
 
-		String brokers = "localhost:9092";
+		String brokers = "localhost:9092;localhost:9093";
 		String groupId = "group01";
 		String topic = "UserMessageTopic";
 

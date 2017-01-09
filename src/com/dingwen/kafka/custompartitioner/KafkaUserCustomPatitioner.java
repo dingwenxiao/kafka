@@ -1,9 +1,11 @@
 package com.dingwen.kafka.custompartitioner;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.kafka.clients.producer.Partitioner;
 import org.apache.kafka.common.Cluster;
+import org.apache.kafka.common.PartitionInfo;
  
 public class KafkaUserCustomPatitioner implements Partitioner {
   private IUserService userService;
@@ -25,11 +27,13 @@ public class KafkaUserCustomPatitioner implements Partitioner {
     String userName = (String) key;
     // Find the id of current user based on the username
     Integer userId = userService.findUserId(userName);
+    
+   // int noOfPartitions = cluster.topics().size();
+    List partitions = cluster.availablePartitionsForTopic(topic);    
     // If the userId not found, default partition is 0
-    if (userId != null) {
+    if (userId != null && userId <= partitions.size()-1) {
       partition = userId;
- 
-    }
+    } 
     return partition;
   }
  

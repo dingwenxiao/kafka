@@ -22,7 +22,7 @@ public class UserConsumerThread implements Runnable {
   private static Properties createConsumerConfig(String brokers, String groupId) {
     Properties props = new Properties();
     props.put("bootstrap.servers", brokers);
-    props.put("group.id", groupId);
+    props.put("group.id", groupId);//consumer group
     props.put("enable.auto.commit", "true");
     props.put("auto.commit.interval.ms", "1000");
     props.put("session.timeout.ms", "30000");
